@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 using namespace std;
 
 #define delimiter "\n-------------------------\n"
@@ -27,8 +27,8 @@ void main()
 	Print(arr, n);
 	Sort(arr, n);
 	Print(arr, n);
-	cout << "Ñóììà ýëåìåíòîâ ìàññèâà: " << Sum(arr, n) << endl;
-	cout << "Cðåäíåå àðèôìèòè÷åñêîå çíà÷åíèå: " << Avg(arr, n) << endl;
+	cout << "Ð¡ÑƒÐ¼Ð¼Ð° ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¼Ð°ÑÑÐ¸Ð²Ð°: " << Sum(arr, n) << endl;
+	cout << "CÑ€ÐµÐ´Ð½ÐµÐµ Ð°Ñ€Ð¸Ñ„Ð¼Ð¸Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ: " << Avg(arr, n) << endl;
 	
 	cout << delimiter << endl;
 	
@@ -38,8 +38,8 @@ void main()
 	Print(d_arr, D_SIZE);
 	Sort(d_arr, D_SIZE);
 	Print(d_arr, D_SIZE);
-	cout << "Ñóììà ýëåìåíòîâ ìàññèâà: " << Sum(d_arr, D_SIZE) << endl;
-	cout << "Cðåäíåå àðèôìèòè÷åñêîå çíà÷åíèå: " << Avg(d_arr, D_SIZE) << endl;
+	cout << "Ð¡ÑƒÐ¼Ð¼Ð° ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¼Ð°ÑÑÐ¸Ð²Ð°: " << Sum(d_arr, D_SIZE) << endl;
+	cout << "CÑ€ÐµÐ´Ð½ÐµÐµ Ð°Ñ€Ð¸Ñ„Ð¼Ð¸Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ: " << Avg(d_arr, D_SIZE) << endl;
 
 	cout << delimiter << endl;
 
@@ -49,8 +49,8 @@ void main()
 	Print(c_arr, C_SIZE);
 	Sort(c_arr, C_SIZE);
 	Print(c_arr, C_SIZE);
-	cout << "Ñóììà ýëåìåíòîâ ìàññèâà: " << Sum(c_arr, C_SIZE) << endl;
-	cout << "Cðåäíåå àðèôìèòè÷åñêîå çíà÷åíèå: " << Avg(c_arr, C_SIZE) << endl;
+	cout << "Ð¡ÑƒÐ¼Ð¼Ð° ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¼Ð°ÑÑÐ¸Ð²Ð°: " << Sum(c_arr, C_SIZE) << endl;
+	cout << "CÑ€ÐµÐ´Ð½ÐµÐµ Ð°Ñ€Ð¸Ñ„Ð¼Ð¸Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ: " << Avg(c_arr, C_SIZE) << endl;
 	
 	cout << delimiter << endl;
 

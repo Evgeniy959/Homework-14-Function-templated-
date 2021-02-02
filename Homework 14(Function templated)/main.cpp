@@ -9,13 +9,34 @@ void fillRand(int arr[], const int n);
 void fillRand(double arr[], const int n);
 void fillRand(char arr[], const int n);
 void fillRand(int arr[ROWS][COLS], const int m, const int n);
+void fillRand(double arr[ROWS][COLS], const int m, const int n);
+void fillRand(char arr[ROWS][COLS], const int m, const int n);
 
-template <typename T> void Print(T arr[], const int n);
+void Print(int arr[], const int n);
+void Print(double arr[], const int n);
+void Print(char arr[], const int n);
+
+void Print(int arr[ROWS][COLS], const int m, const int n);
+void Print(double arr[ROWS][COLS], const int m, const int n);
+void Print(char arr[ROWS][COLS], const int m, const int n);
+
+void Sort(int arr[], const int n);
+void Sort(double arr[], const int n);
+void Sort(char arr[], const int n);
+int Sum(int arr[], const int n);
+double Sum(double arr[], const int n);
+int Sum(char arr[], const int n);
+double Avg(int arr[], const int n);
+double Avg(double arr[], const int n);
+double Avg(char arr[], const int n);
+
+
+/*template <typename T> void Print(T arr[], const int n);
 template <typename T> void Print(T arr[ROWS][COLS], const int m, const int n);
 
 template <typename T> void Sort(T arr[], const int n);
 template <typename T> T Sum(T arr[], const int n);
-template <typename T> double Avg(T arr[], const int n);
+template <typename T> double Avg(T arr[], const int n);*/
 
 void main()
 
@@ -58,6 +79,18 @@ void main()
 	fillRand(i_arr_2, ROWS, COLS);
 	Print(i_arr_2, ROWS, COLS);
 
+	cout << delimiter << endl;
+
+	double d_arr_2[ROWS][COLS];
+	fillRand(d_arr_2, ROWS, COLS);
+	Print(d_arr_2, ROWS, COLS);
+
+	cout << delimiter << endl;
+
+	char c_arr_2[ROWS][COLS];
+	fillRand(c_arr_2, ROWS, COLS);
+	Print(c_arr_2, ROWS, COLS);
+
 }
 
 void fillRand(int arr[], const int n)
@@ -83,6 +116,125 @@ void fillRand(char arr[], const int n)
 		
 	}
 }
+
+void Print(int arr[], const int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << endl;
+}
+void Print(double arr[], const int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << endl;
+}
+
+void Print(char arr[], const int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << endl;
+}
+
+void Sort(int arr[], const int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = i + 1; j < n; j++)
+		{
+			if (arr[j] < arr[i])
+			{
+				int buffer = arr[i];
+				arr[i] = arr[j];
+				arr[j] = buffer;
+			}
+		}
+	}
+}
+
+void Sort(double arr[], const int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = i + 1; j < n; j++)
+		{
+			if (arr[j] < arr[i])
+			{
+				double buffer = arr[i];
+				arr[i] = arr[j];
+				arr[j] = buffer;
+			}
+		}
+	}
+}
+void Sort(char arr[], const int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = i + 1; j < n; j++)
+		{
+			if (arr[j] < arr[i])
+			{
+				char buffer = arr[i];
+				arr[i] = arr[j];
+				arr[j] = buffer;
+			}
+		}
+	}
+}
+
+int Sum(int arr[], const int n)
+{
+	int sum = 0;
+	for (int i = 0; i < n; i++)
+	{
+		sum += arr[i];
+	}
+	return sum;
+}
+
+double Sum(double arr[], const int n)
+{
+	double sum = 0;
+	for (int i = 0; i < n; i++)
+	{
+		sum += arr[i];
+	}
+	return sum;
+}
+
+int Sum(char arr[], const int n)
+{
+	int sum = 0;
+	for (int i = 0; i < n; i++)
+	{
+		sum += arr[i];
+	}
+	return sum;
+}
+
+double Avg(int arr[], const int n)
+{
+	return (double)Sum(arr, n) / n;
+}
+
+double Avg(double arr[], const int n)
+{
+	return Sum(arr, n) / n;
+}
+
+double Avg(char arr[], const int n)
+{
+	return (double)Sum(arr, n) / n;
+}
+
 void fillRand(int arr[ROWS][COLS], const int m, const int n)
 {
 	for (int i = 0; i < m; i++)
@@ -93,16 +245,42 @@ void fillRand(int arr[ROWS][COLS], const int m, const int n)
 		}
 	}
 }
-template <typename T> void Print(T arr[], const int n)
+
+void fillRand(double arr[ROWS][COLS], const int m, const int n)
 {
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < m; i++)
 	{
-		cout << arr[i] << "\t";
+		for (int j = 0; j < n; j++)
+		{
+			arr[i][j] = rand() % 100;
+			arr[i][j] /= 10;
+		}
 	}
-	cout << endl;
 }
 
-template <typename T> void Print(T arr[ROWS][COLS], const int m, const int n)
+void fillRand(char arr[ROWS][COLS], const int m, const int n)
+{
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			arr[i][j] = rand();
+		}
+	}
+}
+
+void Print(int arr[ROWS][COLS], const int m, const int n)
+{
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			cout << arr[i][j] << "\t";
+		}
+		cout << endl;
+	}
+}
+void Print(double arr[ROWS][COLS], const int m, const int n)
 {
 	for (int i = 0; i < m; i++)
 	{
@@ -114,34 +292,14 @@ template <typename T> void Print(T arr[ROWS][COLS], const int m, const int n)
 	}
 }
 
-template<typename T> void Sort(T arr[], const int n)
+void Print(char arr[ROWS][COLS], const int m, const int n)
 {
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < m; i++)
 	{
-		for (int j = i + 1; j < n; j++)
+		for (int j = 0; j < n; j++)
 		{
-			if (arr[j] < arr[i])
-			{
-				T buffer = arr[i];
-				arr[i] = arr[j];
-				arr[j] = buffer;
-			}
+			cout << arr[i][j] << "\t";
 		}
-
+		cout << endl;
 	}
-}
-
-template<typename T> T Sum(T arr[], const int n)
-{
-	T sum = 0;
-	for (int i = 0; i < n; i++)
-	{
-		sum += arr[i];
-	}
-	return sum;
-}
-
-template<typename T> double Avg(T arr[], const int n)
-{
-	return (double)Sum(arr, n) / n;
 }

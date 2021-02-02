@@ -1,21 +1,4 @@
-﻿#include <iostream>
-using namespace std;
-
-#define delimiter "\n-------------------------\n"
-const int ROWS = 8;
-const int COLS = 5;
-
-void fillRand(int arr[], const int n);
-void fillRand(double arr[], const int n);
-void fillRand(char arr[], const int n);
-void fillRand(int arr[ROWS][COLS], const int m, const int n);
-
-template <typename T> void Print(T arr[], const int n);
-template <typename T> void Print(T arr[ROWS][COLS], const int m, const int n);
-
-template <typename T> void Sort(T arr[], const int n);
-template <typename T> T Sum(T arr[], const int n);
-template <typename T> double Avg(T arr[], const int n);
+﻿#include"Fuctions.h"
 
 void main()
 
@@ -29,9 +12,9 @@ void main()
 	Print(arr, n);
 	cout << "Сумма элементов массива: " << Sum(arr, n) << endl;
 	cout << "Cреднее арифмитическое значение: " << Avg(arr, n) << endl;
-	
+
 	cout << delimiter << endl;
-	
+
 	const int D_SIZE = 8;
 	double d_arr[D_SIZE];
 	fillRand(d_arr, D_SIZE);
@@ -51,97 +34,32 @@ void main()
 	Print(c_arr, C_SIZE);
 	cout << "Сумма элементов массива: " << Sum(c_arr, C_SIZE) << endl;
 	cout << "Cреднее арифмитическое значение: " << Avg(c_arr, C_SIZE) << endl;
-	
+
 	cout << delimiter << endl;
 
 	int i_arr_2[ROWS][COLS];
 	fillRand(i_arr_2, ROWS, COLS);
 	Print(i_arr_2, ROWS, COLS);
 
+	cout << delimiter << endl;
+
+	double d_arr_2[ROWS][COLS];
+	fillRand(d_arr_2, ROWS, COLS);
+	Print(d_arr_2, ROWS, COLS);
+
+	cout << delimiter << endl;
+
+	char c_arr_2[ROWS][COLS];
+	fillRand(c_arr_2, ROWS, COLS);
+	Print(c_arr_2, ROWS, COLS);
+
 }
 
-void fillRand(int arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		arr[i] = rand() % 100;
-	}
-}
-void fillRand(double arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		arr[i] = rand() % 100;
-		arr[i] /= 10;
-	}
-}
-void fillRand(char arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		arr[i] = rand();
-		
-	}
-}
-void fillRand(int arr[ROWS][COLS], const int m, const int n)
-{
-	for (int i = 0; i < m; i++)
-	{
-		for (int j = 0; j < n; j++)
-		{
-			arr[i][j] = rand() % 100;
-		}
-	}
-}
-template <typename T> void Print(T arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		cout << arr[i] << "\t";
-	}
-	cout << endl;
-}
 
-template <typename T> void Print(T arr[ROWS][COLS], const int m, const int n)
-{
-	for (int i = 0; i < m; i++)
-	{
-		for (int j = 0; j < n; j++)
-		{
-			cout << arr[i][j] << "\t";
-		}
-		cout << endl;
-	}
-}
 
-template<typename T> void Sort(T arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = i + 1; j < n; j++)
-		{
-			if (arr[j] < arr[i])
-			{
-				T buffer = arr[i];
-				arr[i] = arr[j];
-				arr[j] = buffer;
-			}
-		}
 
-	}
-}
 
-template<typename T> T Sum(T arr[], const int n)
-{
-	T sum = 0;
-	for (int i = 0; i < n; i++)
-	{
-		sum += arr[i];
-	}
-	return sum;
-}
 
-template<typename T> double Avg(T arr[], const int n)
-{
-	return (double)Sum(arr, n) / n;
-}
+
+
+

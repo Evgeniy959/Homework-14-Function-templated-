@@ -9,6 +9,8 @@ void fillRand(int arr[], const int n);
 void fillRand(double arr[], const int n);
 void fillRand(char arr[], const int n);
 void fillRand(int arr[ROWS][COLS], const int m, const int n);
+void fillRand(double arr[ROWS][COLS], const int m, const int n);
+void fillRand(char arr[ROWS][COLS], const int m, const int n);
 
 template <typename T>void Print(T arr[], const int n);
 template <typename T>void Print(T arr[ROWS][COLS], const int m, const int n);
@@ -58,6 +60,17 @@ void main()
 	fillRand(i_arr_2, ROWS, COLS);
 	Print(i_arr_2, ROWS, COLS);
 
+	cout << delimiter << endl;
+
+	double d_arr_2[ROWS][COLS];
+	fillRand(d_arr_2, ROWS, COLS);
+	Print(d_arr_2, ROWS, COLS);
+	
+	cout << delimiter << endl;
+
+	char c_arr_2[ROWS][COLS];
+	fillRand(c_arr_2, ROWS, COLS);
+	Print(c_arr_2, ROWS, COLS);	
 }
 
 void fillRand(int arr[], const int n)
@@ -90,6 +103,28 @@ void fillRand(int arr[ROWS][COLS], const int m, const int n)
 		for (int j = 0; j < n; j++)
 		{
 			arr[i][j] = rand() % 100;
+		}
+	}
+}
+void fillRand(double arr[ROWS][COLS], const int m, const int n)
+{
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			arr[i][j] = rand() % 100;
+			arr[i][j] /= 10;
+		}
+	}
+}
+
+void fillRand(char arr[ROWS][COLS], const int m, const int n)
+{
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			arr[i][j] = rand();
 		}
 	}
 }
